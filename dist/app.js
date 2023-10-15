@@ -248,21 +248,13 @@ rightAnimateTl.from(rightAnimateElements, {
 });
 
 
-var animateElements = $("#map");
-var animateTL = gsap.timeline({
-    scrollTrigger: {
-        trigger: animateElements,
-        start: "top center",
-        end: "bottom center",
-        toggleActions: "play none none none",
-    },
-});
 
-gsap.from($("#map"), {
+
+gsap.from("#map", {
     opacity: 0,
-    duration: 1, // Animation duration in seconds
+    duration: 1,
     scrollTrigger: {
-        trigger: $("#map"),
+        trigger: "#map",
         start: "top 80%",
         end: "top 20%",
         toggleActions: "play none none none",
