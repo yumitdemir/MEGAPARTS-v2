@@ -1,4 +1,3 @@
-# Key takeaways
 - Created fully responsive map with its pointers. I didn't use any media queries for this responsivenes solved it with svg.
 - Full responsiv for all sizes 
 
