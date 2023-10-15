@@ -52,14 +52,7 @@ session_start();
                     <img class="min-w-[18px]" src="../assets/nav/Basket-Vector.svg" alt="">
                     <div id="basket-count"
                          class="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-[6px] -right-[4px] ">
-                        <?php
-                        if (isset($_SESSION['cart_session'])){
-                            echo count($_SESSION['cart_session']);
-                        }else{
-                            echo "0";
-                        }
-
-                        ?>
+                        0
                     </div>
                 </button>
                 <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -72,22 +65,7 @@ session_start();
                                         aria-label="Close"></button>
                             </div>
                             <div id="cart-modal-body" class="modal-body flex flex-col gap-[15px]">
-                                <?php
-                                if (isset($_SESSION['cart_session'])) {
-                                    foreach ($_SESSION['cart_session'] as $item) {
-                                        $name = htmlspecialchars($item['name']);
-                                        $price = htmlspecialchars($item['price']);
 
-                                        echo '<div class="flex justify-between items-center">
-                                         <p class="text-xl">' . $name . '</p>
-                                         <p class="text-xl text-accent-green">' . $price . '</p>
-                                        </div>';
-                                    }
-                                }else{
-                                    echo "<p>Cart is empty!</p>";
-                                }
-
-                                ?>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn " data-bs-dismiss="modal">Close</button>

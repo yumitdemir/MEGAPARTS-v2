@@ -55,15 +55,7 @@ function createProductCard(product) {
         })
             .then(response => response.json())
             .then(data => {
-                document.getElementById('basket-count').textContent = data.length;
-                let checkoutItem = `
-        <div class="flex justify-between items-center">
-            <p class="text-xl">${product.name}</p>
-            <p class="text-xl text-accent-green">${product.price}</p>
-        </div>`;
-
-                document.getElementById('cart-modal-body').insertAdjacentHTML('beforeend', checkoutItemHTML); // Insert the HTML as a child
-
+                renderCart();
 
             })
             .catch(error => {
@@ -88,11 +80,61 @@ function createProductCard(product) {
 
     return cardContainer;
 }
+function createCheckoutItem(product) {
+    const checkoutItem = document.createElement('div');
+    checkoutItem.classList.add('flex', 'justify-between', 'items-center');
 
+    const productName = document.createElement('p');
+    productName.classList.add('text-xl');
+    productName.textContent = product.name;
+
+    const productPriceContainer = document.createElement('div');
+    productPriceContainer.classList.add('flex');
+
+    const productPrice = document.createElement('p');
+    productPrice.classList.add('text-xl', 'text-accent-green');
+    productPrice.textContent = product.price;
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'x';
+    removeButton.classList.add("text-white","text-xl","gap-[3px]","bg-black",)
+    productPriceContainer.appendChild(productPrice);
+    productPriceContainer.appendChild(removeButton);
+    removeButton.addEventListener("click", () => {
+        fetch('includs/delete_from_cart.php', {
+            method: 'POST',
+            body: JSON.stringify(product), // Include additional data here
+        })
+            .then(response => response.json())
+            .then(data => {
+                renderCart();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+    checkoutItem.appendChild(productName);
+    checkoutItem.appendChild(productPriceContainer);
+
+    document.getElementById('cart-modal-body').appendChild(checkoutItem); // Insert the HTML as a child
+}
 
 showProductCards();
-
-
+renderCart();
+function renderCart(){
+    fetch('includs/get_cart.php')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('basket-count').textContent = Object.values(data).length;
+            document.getElementById('cart-modal-body').innerHTML = "";
+            Object.values(data).forEach((product) => {
+                createCheckoutItem(product);
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
 // Animations
 // Map
 const sofiaElement = document.getElementById("sofia");
