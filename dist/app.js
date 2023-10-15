@@ -227,7 +227,7 @@ var leftAnimateTL = gsap.timeline({
 });
 
 leftAnimateTL.from(leftAnimateElements, {
-    x: -1000,
+    x: -2000,
     duration: 1.2,
 });
 
@@ -264,6 +264,17 @@ gsap.from("#map", {
     duration: 1,
     scrollTrigger: {
         trigger: "#map",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none none none",
+    },
+});
+
+gsap.from("#add-cart-cards", {
+    opacity: 0,
+    duration: 3,
+    scrollTrigger: {
+        trigger: "#add-cart-cards",
         start: "top 80%",
         end: "top 20%",
         toggleActions: "play none none none",

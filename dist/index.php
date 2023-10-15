@@ -258,7 +258,7 @@ session_start();
     </div>
 </div>
 <div id="add-cart-cards"
-     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center justify-center container mx-auto my-4 left-appear-animation">
+     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center justify-center container mx-auto my-4">
 </div>
 
 <div class="container mx-auto px-[12px] flex flex-col lg:flex-row ">
