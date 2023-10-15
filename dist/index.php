@@ -200,8 +200,7 @@
         </div>
     </div>
 </div>
-<div id="add-cart-cards" class="flex gap-[25px] container mx-auto  flex-wrap items-center justify-center my-[20px]   right-appear-animation">
-
+<div id="add-cart-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 container mx-auto my-4">
 </div>
 
 <div class="container mx-auto px-[12px] flex flex-col lg:flex-row ">

@@ -21,6 +21,10 @@ async function showProductCards() {
 }
 
 function createProductCard(product) {
+    // Create a container div for each product card
+    const cardContainer = document.createElement('div');
+    cardContainer.className = 'grid-item'; // You can define your grid-item class
+
     const cardDiv = document.createElement('div');
     cardDiv.className = 'item-card';
 
@@ -38,6 +42,9 @@ function createProductCard(product) {
     button.textContent = 'Add to cart';
     button.addEventListener('click', () => {
         console.log('Add to cart button clicked for product:', product.name);
+
+
+
     });
 
     const price = document.createElement('p');
@@ -53,7 +60,9 @@ function createProductCard(product) {
     cardDiv.appendChild(title);
     cardDiv.appendChild(flexContainer);
 
-    return cardDiv;
+    cardContainer.appendChild(cardDiv);
+
+    return cardContainer;
 }
 
 
