@@ -247,7 +247,16 @@ rightAnimateTl.from(rightAnimateElements, {
 
 });
 
-
+gsap.from("#reviews", {
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+        trigger: "#reviews",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none none none",
+    },
+});
 
 
 gsap.from("#map", {

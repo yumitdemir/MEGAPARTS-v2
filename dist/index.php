@@ -470,30 +470,30 @@ session_start();
     </div>
 </div>
 
-<div class="flex flex-col lg:flex-row  mx-auto container gap-[32px] lg:gap-[3px] justify-between lg:justify-between overflow-x-scroll w-full  px-[12px] mt-[32px] whitespace-nowrap scroll-bar-x">
+<div class="flex  flex-col lg:flex-row  mx-auto container gap-[32px] lg:gap-[3px] justify-between lg:justify-between overflow-x-scroll w-full  px-[12px] mt-[32px] whitespace-nowrap scroll-bar-x">
     <div class="flex flex-col gap-[8px] lg:gap-[32px] border-2 border-accent-flame rounded-[25px] items-center p-[15px] left-appear-animation">
-        <div class="flex gap-[10px] w-min-[241px] w-[241px] ">
+        <div class="flex gap-[10px] w-min-[241px]  justify-center w-[241px] ">
             <img src="/assets/outline-badges/heart-vector.svg" alt="">
             <p class="text-accent-flame ">Застраховки</p>
         </div>
         <p class="text-primary-text-light">Застраховай автомобила си.</p>
     </div>
     <div class="flex flex-col   gap-[10px] border-2 border-accent-green rounded-[25px] items-center p-[15px] left-appear-animation">
-        <div class="flex gap-[10px] w-min-[241px] w-[241px]  ">
+        <div class="flex gap-[10px] w-min-[241px] justify-center w-[241px]  ">
             <img src="/assets/outline-badges/coin-vector.svg" alt="">
             <p class="text-accent-green">Кредити</p>
         </div>
         <p class="text-primary-text-light"><span class="font-bold font-roboto">MEGA</span> в нужда се познава.</p>
     </div>
     <div class="flex flex-col   gap-[10px] border-2 border-primary-blue  rounded-[25px] items-center p-[15px] right-appear-animation">
-        <div class="flex gap-[10px] w-min-[241px] w-[241px] ">
+        <div class="flex gap-[10px] w-min-[241px]  justify-center w-[241px] ">
             <img src="/assets/outline-badges/bookmark-vector.svg" alt="">
             <p class="text-primary-blue">Автодневник</p>
         </div>
         <p class="text-primary-text-light">Твоят автодневник.</p>
     </div>
     <div class="flex flex-col    gap-[10px] border-2 border-primary-blue  rounded-[25px] items-center p-[15px] right-appear-animation">
-        <div class="flex gap-[10px] w-min-[241px] w-[241px] ">
+        <div class="flex gap-[10px]  justify-center w-min-[241px] w-[241px] ">
             <img src="/assets/outline-badges/article-vector.svg" alt="">
             <p class="text-primary-blue">Новини</p>
         </div>
@@ -504,7 +504,7 @@ session_start();
 
 
 <div class="swiper mySwiper container px-[12px] mt-[87px] ">
-    <div class="swiper-wrapper  ">
+    <div id="reviews" class="swiper-wrapper  ">
         <div class="swiper-slide flex flex-col items-center  justify-center gap-[20px] w-[150px]">
             <div class="justify-center items-center flex mb-[15px]">
                 <img src="../assets/reviews/“.svg" class="w-[29px] h-[26px]" alt=>
