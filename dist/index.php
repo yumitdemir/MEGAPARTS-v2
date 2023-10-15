@@ -493,7 +493,7 @@ session_start();
 </div>
 
 
-<div class="swiper mySwiper container px-[12px] mt-[87px]">
+<div class="swiper mySwiper container px-[12px] mt-[87px] ">
     <div class="swiper-wrapper  ">
         <div class="swiper-slide flex flex-col items-center  justify-center gap-[20px] w-[150px]">
             <div class="justify-center items-center flex mb-[15px]">
@@ -587,8 +587,8 @@ session_start();
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
 </div>
-<div class="relative w-max-[1179px] h-max-[687px] h-full mx-auto  flex justify-center items-center  mt-[100px]">
-    <svg class="absolute" viewBox="0 0 1179 687" fill="none" xmlns="http://www.w3.org/2000/svg">
+<div class=" container mx-auto relative w-max-[1179px] h-max-[687px] h-full mx-auto  flex justify-center items-center  mt-[100px]">
+    <svg id="map-pointers" class="absolute" viewBox="0 0 1179 687" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <filter id="filter0_d_240_2037" x="0.849609" y="0.811432" width="97.8516" height="105.087" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
