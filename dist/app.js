@@ -23,28 +23,52 @@ async function showProductCards() {
 function createProductCard(product) {
     // Create a container div for each product card
     const cardContainer = document.createElement('div');
-    cardContainer.className = 'grid-item'; // You can define your grid-item class
+    cardContainer.className = 'grid-item items-center justify-center flex mb-[25px]'; // You can define your grid-item class
 
     const cardDiv = document.createElement('div');
-    cardDiv.className = 'item-card';
+    cardDiv.className = 'item-card ';
 
     const img = document.createElement('img');
     img.className = 'item-img';
     img.src = '/assets/item-card/item-1.png';
     img.alt = '';
+    img.addEventListener("click",()=>{
+        window.location.href =`details.php?productId=${product.id}`;
+    })
 
     const title = document.createElement('p');
     title.className = 'item-title';
     title.textContent = product.name;
+    title.addEventListener("click",()=>{
+        window.location.href =`details.php?productId=${product.id}`;
+    })
+
 
     const button = document.createElement('button');
     button.className = 'bg-primary-blue text-white hover:bg-opacity-80 rounded px-[10px] py-[5px]';
     button.textContent = 'Add to cart';
     button.addEventListener('click', () => {
-        console.log('Add to cart button clicked for product:', product.name);
+        console.log(product)
+        fetch('includs/update_cart.php', {
+            method: 'POST',
+            body: JSON.stringify(product), // Include additional data here
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('basket-count').textContent = data.length;
+                let checkoutItem = `
+        <div class="flex justify-between items-center">
+            <p class="text-xl">${product.name}</p>
+            <p class="text-xl text-accent-green">${product.price}</p>
+        </div>`;
+
+                document.getElementById('cart-modal-body').insertAdjacentHTML('beforeend', checkoutItemHTML); // Insert the HTML as a child
 
 
-
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     });
 
     const price = document.createElement('p');
@@ -70,6 +94,31 @@ showProductCards();
 
 
 // Animations
+// Map
+const sofiaElement = document.getElementById("sofia");
+const sofiaOpenElement = document.getElementById("sofia-open");
+
+sofiaElement.addEventListener("mouseover", function() {
+    sofiaOpenElement.classList.remove("opacity-0")
+});
+
+sofiaElement.addEventListener("mouseout", function() {
+    sofiaOpenElement.classList.add("opacity-0")
+});
+
+const varnaElement = document.getElementById("varna");
+const varnaOpenElement = document.getElementById("varna-open");
+
+varnaElement.addEventListener("mouseover", function() {
+    varnaOpenElement.classList.remove("opacity-0")
+});
+
+varnaElement.addEventListener("mouseout", function() {
+    varnaOpenElement.classList.add("opacity-0")
+});
+
+
+
 
 const slider = document.querySelector("#latest-offers-scroll-wrapper");
 const scrollDistance = 100;

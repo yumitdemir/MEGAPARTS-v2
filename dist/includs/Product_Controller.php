@@ -30,7 +30,9 @@ class Product_Controller extends Product_Model
     public function get_products($number_of_product){
        return $this->getProducts($number_of_product);
     }
-
+    public function get_product_by_id($id){
+        return $this->getProductById($id);
+    }
 
     private function isEmptyInputAdd()
     {

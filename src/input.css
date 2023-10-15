@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 body {
     font-family: 'Exo 2', sans-serif;
     height: 300vh;
 }
-.font-roboto{
+
+.font-roboto {
     font-family: Roboto, sans-serif;
 }
 
@@ -42,13 +45,32 @@ body {
     max-width: 900px;
 }
 
+#map-container{
+    /*max-width: 1179px;*/
+    /*max-height: 687px;*/
+    /*width: 1179px;*/
+    /*height: 687px;*/
+    background-size: 100% 100%;
+    background: url("../assets/map.png") ;
+}
 
+#varna-open, #sofia-open{
+    transition: 0.5s ease;
+}
 
 @layer components {
-
-    .container{
+    .notification {
+        position: absolute;
+    }
+    .notification-wrapper{
+        position: relative;
+        width: 100px;
+        height: 100px;
+    }
+    .container {
         overflow-x: hidden;
     }
+
     .badge {
         display: flex;
         padding: 8px 15px;
@@ -75,7 +97,8 @@ body {
         font-weight: 500;
         white-space: nowrap;
     }
-    .badge.nav-badge:hover{
+
+    .badge.nav-badge:hover {
         opacity: 80%;
     }
 
@@ -85,9 +108,10 @@ body {
         font-weight: 500;
         white-space: nowrap;
         padding: 6px 22px;
-        border-width: 2px ;
+        border-width: 2px;
     }
-    .badge.quick-search-badge:hover{
+
+    .badge.quick-search-badge:hover {
         color: white;
     }
 
@@ -111,7 +135,8 @@ body {
         align-items: center;
         color: white;
     }
-    .card-category .blue{
+
+    .card-category .blue {
         fill: #008AEE !important;
     }
 
@@ -123,27 +148,32 @@ body {
         width: 243px;
         cursor: pointer;
     }
-    .item-card .item-img{
+
+    .item-card .item-img {
         width: 100%;
         border: 2px solid #008AEE;
         border-radius: 16px;
     }
-    .item-card .item-img.green{
+
+    .item-card .item-img.green {
         border: 2px solid #5FB865;
 
     }
-    .item-card .item-title{
+
+    .item-card .item-title {
         width: 100%;
         font-weight: 700;
         color: #19242D;
     }
-    .item-card .item-no{
+
+    .item-card .item-no {
         color: #999;
         font-family: Roboto;
         font-weight: 400;
         font-size: 14px;
     }
-    .item-card .item-price{
+
+    .item-card .item-price {
         color: #5FB865;
         font-weight: 700;
     }
