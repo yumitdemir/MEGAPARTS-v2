@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,7 +15,6 @@
     <script defer src="../node_modules/gsap/dist/ScrollTrigger.min.js"></script>
 
     <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
-
 
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="style.css">
@@ -200,6 +200,10 @@
         </div>
     </div>
 </div>
+<div id="add-cart-cards" class="flex gap-[25px] container mx-auto  flex-wrap items-center justify-center my-[20px]   right-appear-animation">
+
+</div>
+
 <div class="container mx-auto px-[12px] flex flex-col lg:flex-row ">
     <div class="card-category bg-primary-blue gap-[25px] w-full lg:w-fit left-appear-animation">
         <div class="flex-col flex items-center">

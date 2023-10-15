@@ -1,5 +1,66 @@
+// Fetch Operations
 
 
+async function showProductCards() {
+    let data = [];
+    try {
+        const response = await fetch('includs/product-json.php'); // Adjust the URL to your API endpoint
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        data = await response.json();
+    } catch (error) {
+        console.error('Error:', error);
+        return;
+    }
+    let targetElement = document.getElementById("add-cart-cards");
+    data.forEach((product) => {
+        const newCard = createProductCard(product);
+        targetElement.appendChild(newCard);
+    })
+}
+
+function createProductCard(product) {
+    const cardDiv = document.createElement('div');
+    cardDiv.className = 'item-card';
+
+    const img = document.createElement('img');
+    img.className = 'item-img';
+    img.src = '/assets/item-card/item-1.png';
+    img.alt = '';
+
+    const title = document.createElement('p');
+    title.className = 'item-title';
+    title.textContent = product.name;
+
+    const button = document.createElement('button');
+    button.className = 'bg-primary-blue text-white hover:bg-opacity-80 rounded px-[10px] py-[5px]';
+    button.textContent = 'Add to cart';
+    button.addEventListener('click', () => {
+        console.log('Add to cart button clicked for product:', product.name);
+    });
+
+    const price = document.createElement('p');
+    price.className = 'item-price';
+    price.textContent = product.price + ' лв.';
+
+    const flexContainer = document.createElement('div');
+    flexContainer.className = 'flex justify-between items-center';
+    flexContainer.appendChild(button);
+    flexContainer.appendChild(price);
+
+    cardDiv.appendChild(img);
+    cardDiv.appendChild(title);
+    cardDiv.appendChild(flexContainer);
+
+    return cardDiv;
+}
+
+
+showProductCards();
+
+
+// Animations
 
 const slider = document.querySelector("#latest-offers-scroll-wrapper");
 const scrollDistance = 100;
@@ -17,22 +78,23 @@ function scrollSlider() {
 
 setInterval(scrollSlider, 3000);
 
-function scrollLeft(scrollWrapper){
+function scrollLeft(scrollWrapper) {
     let currentScrollLeft = scrollWrapper.scrollLeft();
-    scrollWrapper.animate({ scrollLeft: currentScrollLeft - 250 }, 600);
+    scrollWrapper.animate({scrollLeft: currentScrollLeft - 250}, 600);
 }
-function scrollRight(scrollWrapper){
+
+function scrollRight(scrollWrapper) {
     let currentScrollLeft = scrollWrapper.scrollLeft();
-    scrollWrapper.animate({ scrollLeft: currentScrollLeft + 250 }, 600);
+    scrollWrapper.animate({scrollLeft: currentScrollLeft + 250}, 600);
 }
 
 // Nav Scroll
 let navBadgeScrollWrapper = $("#nav-badge-scroll-wrapper")
 
-$("#scroll-forward-btn").click(function (){
+$("#scroll-forward-btn").click(function () {
     scrollRight(navBadgeScrollWrapper)
 });
-$("#scroll-back-btn").click(function (){
+$("#scroll-back-btn").click(function () {
     scrollLeft(navBadgeScrollWrapper)
 });
 
@@ -40,22 +102,21 @@ $("#scroll-back-btn").click(function (){
 // Special offer scroller
 let offerCardScrollWrapper = $("#offers-scroll-wrapper")
 
-$("#scroll-forward-btn-offer").click(function (){
+$("#scroll-forward-btn-offer").click(function () {
     scrollRight(offerCardScrollWrapper)
 });
-$("#scroll-back-btn-offer").click(function (){
+$("#scroll-back-btn-offer").click(function () {
     scrollLeft(offerCardScrollWrapper)
 });
-
 
 
 // Latest posts
 let latestOfferCardScrollWrapper = $("#latest-offers-scroll-wrapper")
 
-$("#scroll-forward-btn-latest-offer").click(function (){
+$("#scroll-forward-btn-latest-offer").click(function () {
     scrollRight(latestOfferCardScrollWrapper)
 });
-$("#scroll-back-btn-latest-offer").click(function (){
+$("#scroll-back-btn-latest-offer").click(function () {
     scrollLeft(latestOfferCardScrollWrapper)
 });
 
@@ -77,10 +138,10 @@ const quickSearch = $('#quick-search');
 
 const timeline = gsap.timeline();
 
-timeline.to(nav, { x: 3000, duration: 0, ease: 'power2.inOut' });
-timeline.to(quickSearch, { x: 2500, duration: 0, ease: 'power2.inOut'});
-timeline.to([quickSearch,nav], { x: -40, duration: 1, ease: 'power2.inOut' });
-timeline.to([nav, quickSearch], { x: 0, duration: 0.5, ease: 'power2.inOut' });
+timeline.to(nav, {x: 3000, duration: 0, ease: 'power2.inOut'});
+timeline.to(quickSearch, {x: 2500, duration: 0, ease: 'power2.inOut'});
+timeline.to([quickSearch, nav], {x: -40, duration: 1, ease: 'power2.inOut'});
+timeline.to([nav, quickSearch], {x: 0, duration: 0.5, ease: 'power2.inOut'});
 
 
 timeline.play();
