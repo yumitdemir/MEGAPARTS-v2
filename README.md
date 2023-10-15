@@ -4,3 +4,8 @@
 - Was not able to think of a solution for the review section. My  implementations were always off so I decided to go with a simpler one
 - I should have used more slider libraries before implementing my own sliders.
 - Fully responsive for all sizes 
+
+
+
+![screencapture-localhost-63342-task8-1-dist-index-php-2023-10-16-00_10_26](https://github.com/yumitdemir/MEGAPARTS-v2/assets/108368506/351797bd-aed1-4790-9cc7-ca2809d02bfb)
+![screencapture-localhost-63342-task8-1-dist-index-php-2023-10-16-00_10_07](https://github.com/yumitdemir/MEGAPARTS-v2/assets/108368506/7d8bfac4-3a31-4e2c-8f7e-afba251315b8)
