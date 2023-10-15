@@ -53,7 +53,12 @@ session_start();
                     <div id="basket-count"
                          class="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-[6px] -right-[4px] ">
                         <?php
-                        echo count($_SESSION['cart_session'])
+                        if (isset($_SESSION['cart_session'])){
+                            echo count($_SESSION['cart_session']);
+                        }else{
+                            echo "0";
+                        }
+
                         ?>
                     </div>
                 </button>
@@ -92,7 +97,7 @@ session_start();
                 <img src="../assets/nav/user-vector.svg" alt="">
                 <p>ВХОД</p>
             </div>
-            <div class=" hidden lg:flex   px-[20px] border-e border-white ">
+            <div class=" hidden lg:flex   px-[20px] ">
                 <img src="../assets/nav/youtube-facebook-icon-vector.svg" alt="">
             </div>
             <div class="hidden lg:flex  px-[20px] text-white text-[20px] gap-[5px] items-center">
