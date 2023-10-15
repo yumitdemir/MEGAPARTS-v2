@@ -73,15 +73,20 @@ session_start();
                             </div>
                             <div id="cart-modal-body" class="modal-body flex flex-col gap-[15px]">
                                 <?php
-                                foreach ($_SESSION['cart_session'] as $item) {
-                                    $name = htmlspecialchars($item['name']);
-                                    $price = htmlspecialchars($item['price']);
+                                if (isset($_SESSION['cart_session'])) {
+                                    foreach ($_SESSION['cart_session'] as $item) {
+                                        $name = htmlspecialchars($item['name']);
+                                        $price = htmlspecialchars($item['price']);
 
-                                    echo '<div class="flex justify-between items-center">
+                                        echo '<div class="flex justify-between items-center">
                                          <p class="text-xl">' . $name . '</p>
                                          <p class="text-xl text-accent-green">' . $price . '</p>
                                         </div>';
+                                    }
+                                }else{
+                                    echo "<p>Cart is empty!</p>";
                                 }
+
                                 ?>
                             </div>
                             <div class="modal-footer">
