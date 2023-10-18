@@ -573,7 +573,7 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
 </div>
-<div id="map" class=" container mx-auto relative w-max-[1179px] h-max-[687px] h-full mx-auto  flex justify-center items-center  mt-[100px]">
+<div id="map" class=" overflow-y-hidden container  relative w-max-[1179px] h-max-[687px] h-full mx-auto  flex justify-center items-center  mt-[100px]">
     <svg id="map-pointers" class="absolute" viewBox="0 0 1179 687" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <filter id="filter0_d_240_2037" x="0.849609" y="0.811432" width="97.8516" height="105.087" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
