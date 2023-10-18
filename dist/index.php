@@ -201,6 +201,7 @@
         </div>
     </div>
 </div>
+
 <img class="min-h-[140px] max-h-[300px] w-full object-cover  " src="/assets/hero-img.png" alt="">
 <div class="container mx-auto flex flex-col justify-center items-center lg:flex-row w-full gap-[23px] px-[16px] pt-[14px] pb-[25px] ">
     <div class="flex gap-[15px] justify-start w-full transport-animate ">
@@ -210,7 +211,7 @@
             <p class="text-primary-text-light">Доставяме до всяка точка на България.</p>
         </div>
     </div>
-    <div class="flex gap-[15px]  flex-row-reverse lg:flex-row justify-start text-end lg:text-start w-full transport-animate">
+    <div class="flex gap-[15px]   flex-row lg:flex-row-reverse justify-end lg:justify-start text-start w-full transport-animate">
         <img class="w-[56px] h-[50px]" src="../assets/delivery-info/boxes-vector.svg" alt="">
         <div class="flex flex-col gap-[8px] text-[13px]">
             <p class="font-bold text-primary-text ">Нови части всеки ден</p>
@@ -224,7 +225,7 @@
             <p class="text-primary-text-light">Авточасти с гаранция.</p>
         </div>
     </div>
-    <div class="flex gap-[15px]  flex-row-reverse lg:flex-row justify-start text-end lg:text-start w-full transport-animate">
+    <div class="flex gap-[15px]   flex-row lg:flex-row-reverse justify-end lg:justify-start text-start w-full transport-animate">
         <img class="w-[56px] h-[50px]" src="../assets/delivery-info/gear-vector.svg" alt="">
         <div class="flex flex-col gap-[8px] text-[13px]">
             <p class="font-bold text-primary-text ">Право на връщане</p>
