@@ -34,6 +34,13 @@ class Product_Controller extends Product_Model
         return $this->getProductById($id);
     }
 
+    public function update_product($name, $description, $price, $image_url,$id){
+        return $this->updateProductById($name, $description, $price, $image_url,$id);
+    }
+    public function delete_product($id){
+        return $this->deleteProductById($id);
+    }
+
     private function isEmptyInputAdd()
     {
         $flag = true;

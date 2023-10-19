@@ -1,6 +1,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $id = $_POST["id"];
     $name = $_POST["name"];
     $description = $_POST["description"];
     $price = $_POST["price"];
@@ -11,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require_once "Product_Model.php";
     require_once "Product_Controller.php";
 
-    $product_controller = new Product_Controller($name,$description,$price,$img_url );
-    $product_controller->add_product();
+    $product_controller = new Product_Controller();
+    $product_controller->update_product($name,$description,$price,$img_url,$id);
 
     header("location: /MEGAPARTS-v2/dist/index.php");
     exit();
