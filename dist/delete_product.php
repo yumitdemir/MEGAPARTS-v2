@@ -13,7 +13,7 @@
 <div class="flex justify-center flex-col gap-5 items-center  w-screen h-screen">
     <p class="text-3xl text-center">Remove Product</p>
     <form class="flex flex-col gap-[10px]" action="includs/remove_product_formhandler.php" method="post">
-        <input class=" px-[5px] py-[8px] border  border-nav-primary" type="text" placeholder="product-id">
+        <input name="id" class=" px-[5px] py-[8px] border  border-nav-primary" type="text" placeholder="product-id">
         <button class="bg-black text-white py-3 hover:bg-opacity-80">Remove</button>
     </form>
 

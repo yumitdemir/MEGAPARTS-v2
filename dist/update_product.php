@@ -13,7 +13,7 @@
 <div class="flex justify-center flex-col gap-5 items-center  w-screen h-screen">
     <p class="text-3xl text-center">Update Product</p>
     <form class="flex flex-col gap-[10px]" action="includs/update_product_formhandler.php" method="post">
-        <input type="number" class=" px-[5px] py-[8px] border  border-nav-primary" placeholder="product-id">
+        <input type="text" class=" px-[5px] py-[8px] border  border-nav-primary" placeholder="product-id" name="id">
         <input name="name" class=" px-[5px] py-[8px] border  border-nav-primary" type="text" placeholder="Name">
         <textarea name="description" class=" px-[5px] py-[8px] border  border-nav-primary"  cols="30" rows="10" placeholder="Description"></textarea>
         <input name="price" class=" px-[5px] py-[8px] border  border-nav-primary" type="number" placeholder="Price">

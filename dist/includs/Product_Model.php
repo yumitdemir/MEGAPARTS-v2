@@ -47,9 +47,9 @@ class Product_Model extends Database
         return $result;
     }
 
-    protected function updateProductById($name, $description, $price, $image_url,$id)
+    protected function updateProductById($name, $description, $price, $image_url, $id)
     {
-        $query = "UPDATE products SET name=:name, description=:description ,price = :price, description = :description WHERE id = :id";
+        $query = "UPDATE products SET name = :name, description = :description, price = :price, image_url = :image_url WHERE id = :id;";
         $statement = [
             "id" => $id,
             "name" => $name,
